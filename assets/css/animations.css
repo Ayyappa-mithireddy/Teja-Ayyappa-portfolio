@@ -1,0 +1,76 @@
+/* ==========================================================================
+   MOTION & TRANSITION SYSTEM
+   ========================================================================== */
+
+/* Fade & Slide In Scroll Trigger */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* Subtle pulse for brand gem */
+@keyframes gemPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px var(--accent-magenta);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 16px var(--accent-magenta);
+  }
+}
+
+.brand-gem {
+  animation: gemPulse 2.5s infinite ease-in-out;
+}
+
+/* Spinning Dashed Orbital Rings for Monogram Badge */
+@keyframes spinClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinCounter {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
