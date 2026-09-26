@@ -16,8 +16,8 @@
     rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/animations.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=8.0">
+  <link rel="stylesheet" href="assets/css/animations.css?v=8.0">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
@@ -26,8 +26,9 @@
 
 <body>
 
-  <!-- Continuous Vertical-Ribbed Ambient Overlay & Iridescent Canvas -->
+  <!-- Continuous Vertical-Ribbed Ambient Overlay & Viewport-Fixed Global Canvas -->
   <div class="ribbed-overlay bg-gradient-canvas" aria-hidden="true"></div>
+  <canvas id="magnetic-canvas" class="global-antigravity-canvas" aria-hidden="true"></canvas>
 
   <!-- TOP-CENTERED FLOATING PILL NAVBAR -->
   <header class="navbar-dock-wrapper">
@@ -64,42 +65,47 @@
          1. HERO SECTION (HOME)
          ====================================================================== -->
     <section class="hero-dock-section" id="home">
-      <div class="container">
+      <!-- Ambient Viewport Backdrops -->
+      <div class="cosmic-void" aria-hidden="true"></div>
+      <div class="flux-core-beam" aria-hidden="true"></div>
+      <div class="vignette-overlay" aria-hidden="true"></div>
 
-        <!-- Top Tag Badge -->
-        <div class="hero-pill-badge fade-in-up delay-1">
-          <span style="color:var(--accent-magenta);">✦</span>
-          <span>Data Science Student</span>
-        </div>
+      <div class="container hero-content-layer">
 
-        <!-- Centered Hero Title with Interactive Glowing Letters -->
-        <h1 class="hero-title fade-in-up delay-2" id="hero-name">
+        <!-- Central Hero Identity in Editorial Cinzel Serif Typography -->
+        <h1 class="hero-title cinzel-title fade-in-up delay-2" id="hero-name">
           <span class="hero-name-line name-row">
-            <span class="glow-letter glow-char">T</span><span class="glow-letter glow-char">e</span><span
-              class="glow-letter glow-char">j</span><span class="glow-letter glow-char">a</span>
+            <span class="glow-letter glow-char">T</span><span class="glow-letter glow-char">E</span><span class="glow-letter glow-char">J</span><span class="glow-letter glow-char">A</span>
           </span>
           <span class="hero-name-line name-row">
-            <span class="glow-letter glow-char">A</span><span class="glow-letter glow-char">y</span><span
-              class="glow-letter glow-char">y</span><span class="glow-letter glow-char">a</span><span
-              class="glow-letter glow-char">p</span><span class="glow-letter glow-char">p</span><span
-              class="glow-letter glow-char">a</span>
+            <span class="glow-letter glow-char">A</span><span class="glow-letter glow-char">Y</span><span class="glow-letter glow-char">Y</span><span class="glow-letter glow-char">A</span><span class="glow-letter glow-char">P</span><span class="glow-letter glow-char">P</span><span class="glow-letter glow-char">A</span>
           </span>
         </h1>
 
-        <!-- Hero Bio Paragraph -->
-        <p class="hero-bio-text fade-in-up delay-3">
-          Building scalable data pipelines, database modeling, machine learning models, and interactive BI dashboards
-          using Python, SQL, and Power BI.
+        <!-- Subtitle discipline identifier -->
+        <p class="hero-subtitle-tag fade-in-up delay-3">
+          DATA SCIENCE <span class="accent-cross">×</span> DATA ENGINEERING
         </p>
 
-        <!-- Rounded Pill "View CV" Action Button -->
-        <div class="fade-in-up delay-4" style="margin-top: 10px;">
+        <!-- Hero Bio Paragraph -->
+        <p class="hero-bio-text fade-in-up delay-3">
+          Weaving raw distributed data into resilient production pipelines, predictive machine learning models, and strategic BI architectures.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions-wrap fade-in-up delay-4">
           <a href="Teja_Ayyappa_Resume_Revised.pdf" download="Teja_Ayyappa_Resume_Revised.pdf" class="btn-view-cv"
             id="view-cv-btn" title="Download Teja Ayyappa's Resume">
             <span>View CV</span>
             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </a>
+          <a href="https://github.com/Ayyappa-mithireddy" target="_blank" rel="noopener noreferrer" class="btn-github-pill" title="Explore GitHub Pipelines">
+            <span>Explore GitHub</span>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
           </a>
         </div>
@@ -621,7 +627,7 @@
   </button>
 
   <!-- Interactive JavaScript Logic -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=8.0"></script>
 </body>
 
 </html>

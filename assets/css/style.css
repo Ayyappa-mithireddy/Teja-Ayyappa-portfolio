@@ -4,37 +4,28 @@
    ========================================================================== */
 
 :root {
-  /* Core Color Tokens */
-  --bg-base: #0B041A;
-  --bg-deep: #070212;
+  /* Core Color Tokens - Anti-Gravity Alloy Palette */
+  --bg-base: #03050d;
+  --bg-deep: #010206;
   --bg-gradient-mesh: 
     repeating-linear-gradient(
       to right,
-      rgba(255, 255, 255, 0.04) 0px,
-      rgba(255, 255, 255, 0.04) 1px,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
       transparent 1px,
-      transparent 28px
+      transparent 32px
     ),
-    radial-gradient(ellipse 90% 70% at 50% -5%, rgba(217, 70, 239, 0.38), transparent 65%),
-    radial-gradient(ellipse 65% 50% at 85% 25%, rgba(249, 115, 22, 0.22), transparent 55%),
-    radial-gradient(ellipse 70% 60% at 12% 55%, rgba(6, 182, 212, 0.26), transparent 60%),
-    radial-gradient(ellipse 80% 60% at 88% 80%, rgba(139, 92, 246, 0.32), transparent 65%),
-    linear-gradient(180deg, #0B041A 0%, #15072B 35%, #100322 70%, #070212 100%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(168, 85, 247, 0.15), transparent 65%),
+    radial-gradient(ellipse 65% 55% at 88% 25%, rgba(6, 182, 212, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 10% 60%, rgba(15, 118, 110, 0.12), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 85% 85%, rgba(168, 85, 247, 0.15), transparent 65%),
+    linear-gradient(180deg, #020409 0%, #03050d 15%, #03050d 85%, #010206 100%);
 
-  /* Light Theme Variant Tokens (Sunset-Dawn Iridescent Glass) */
-  --bg-base-light: #f0f4ff;
+  /* Light Theme Variant Tokens (Ultra-Clean Editorial Tech Glass) */
+  --bg-base-light: #f8fafc;
   --bg-gradient-mesh-light:
-    repeating-linear-gradient(
-      90deg,
-      rgba(71, 85, 105, 0.1) 0px,
-      rgba(71, 85, 105, 0.1) 1.5px,
-      transparent 1.5px,
-      transparent 18px
-    ),
-    radial-gradient(circle at 18% 78%, rgba(14, 165, 233, 0.35) 0%, transparent 48%),
-    radial-gradient(circle at 45% 20%, rgba(99, 102, 241, 0.32) 0%, transparent 52%),
-    radial-gradient(circle at 85% 35%, rgba(244, 63, 94, 0.26) 0%, transparent 46%),
-    linear-gradient(145deg, #f0f4ff 0%, #fae8ff 45%, #fff1f2 100%);
+    radial-gradient(circle at 50% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 65%, rgba(99, 102, 241, 0.06) 0%, transparent 45%);
 
   /* Frosted Glass Tokens */
   --dock-glass-bg: rgba(255, 255, 255, 0.08);
@@ -101,7 +92,9 @@ html {
 
 body {
   font-family: var(--font-family);
-  background: var(--bg-gradient-mesh);
+  background: radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 80% 60%, rgba(168, 85, 247, 0.07) 0%, transparent 50%),
+              #020409;
   background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
@@ -115,8 +108,12 @@ body {
 
 body.light-theme,
 body.light {
-  background: var(--bg-gradient-mesh-light);
-  background-attachment: fixed;
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 65%, rgba(99, 102, 241, 0.06) 0%, transparent 45%) !important;
+  background-attachment: fixed !important;
+  color: #0f172a !important;
 }
 
 /* Subtle Vertical-Rib Ambient Overlay Layer */
@@ -138,34 +135,8 @@ body.light-theme .ribbed-overlay,
 body.light .ribbed-overlay,
 body.light .bg-gradient-canvas,
 body.light-theme .bg-gradient-canvas {
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(71, 85, 105, 0.1) 0px,
-    rgba(71, 85, 105, 0.1) 1.5px,
-    transparent 1.5px,
-    transparent 18px
-  );
-}
-
-/* Standalone Sunset-Dawn Iridescent Canvas Support */
-body.light .bg-gradient-canvas,
-body.light-theme .bg-gradient-canvas {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(71, 85, 105, 0.1) 0px,
-      rgba(71, 85, 105, 0.1) 1.5px,
-      transparent 1.5px,
-      transparent 18px
-    ),
-    radial-gradient(circle at 18% 78%, rgba(14, 165, 233, 0.35) 0%, transparent 48%),
-    radial-gradient(circle at 45% 20%, rgba(99, 102, 241, 0.32) 0%, transparent 52%),
-    radial-gradient(circle at 85% 35%, rgba(244, 63, 94, 0.26) 0%, transparent 46%),
-    linear-gradient(145deg, #f0f4ff 0%, #fae8ff 45%, #fff1f2 100%);
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
+  background-size: 80px 100% !important;
 }
 
 /* Layout Container */
@@ -264,11 +235,11 @@ body.light-theme .section-pill-tag {
 
 body.light-theme .navbar-dock,
 body.light .navbar-dock {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 12px 36px -4px rgba(99, 102, 241, 0.16), 0 4px 12px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
 }
 
 .brand-pill {
@@ -381,64 +352,281 @@ body.light-theme .theme-pill-btn:hover {
 }
 
 /* ==========================================================================
-   HERO SECTION (HOME)
+   HERO SECTION (HOME) WITH ELECTROMAGNETIC FLUX FIELD
    ========================================================================== */
 .hero-dock-section {
+  position: relative;
+  overflow: hidden;
   padding-top: 180px;
   padding-bottom: 100px;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ambient Viewport Backdrops */
+.cosmic-void {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+#magnetic-canvas,
+#antigravity-canvas,
+.global-antigravity-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+/* Anamorphic Central Magnetic Distortion Ray */
+.flux-core-beam {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130vw;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(147, 51, 234, 0.2) 20%,
+    rgba(6, 182, 212, 0.55) 45%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(20, 184, 166, 0.55) 55%,
+    rgba(147, 51, 234, 0.2) 80%,
+    transparent 100%
+  );
+  filter: blur(1.2px);
+  box-shadow: 0 0 35px 6px rgba(6, 182, 212, 0.4);
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.65;
+}
+
+/* Film Edge Vignette */
+.vignette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
+  box-shadow: inset 100px 0 160px -50px rgba(1, 3, 8, 0.6), inset -100px 0 160px -50px rgba(1, 3, 8, 0.6);
+}
+
+/* Telemetry HUD Readouts */
+.telemetry-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: rgba(148, 163, 184, 0.5);
+  z-index: 10;
+  pointer-events: none;
+  position: absolute;
+}
+
+.telemetry-top-left { top: 24px; left: 32px; }
+.telemetry-top-right { top: 24px; right: 32px; }
+.telemetry-bottom-left { bottom: 24px; left: 32px; }
+.telemetry-bottom-right { bottom: 24px; right: 32px; }
+
+@media (max-width: 768px) {
+  .telemetry-tag { display: none; }
+}
+
+.hero-content-layer,
+.hero-dock-section .container {
+  position: relative;
+  z-index: 4;
+  pointer-events: none;
+  width: 100%;
+}
+
+.hero-dock-section a,
+.hero-dock-section button,
+.hero-dock-section .hero-pill-badge,
+.hero-dock-section .btn-view-cv,
+.hero-dock-section .btn-github-pill,
+.hero-dock-section .glow-letter,
+.hero-dock-section .glow-char {
+  pointer-events: auto;
+}
+
+/* Pulse Dot in Status Pill */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 12px #22d3ee;
+  animation: pulseDot 2s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 .hero-pill-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  gap: 10px;
+  background: rgba(6, 182, 212, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 8px 20px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 8px 22px;
   border-radius: 9999px;
-  font-size: 0.88rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: var(--text-main);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(207, 250, 254, 0.95);
   margin-bottom: 24px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
 }
 
 body.light-theme .hero-pill-badge,
 body.light .hero-pill-badge {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 12px 36px -4px rgba(99, 102, 241, 0.16), 0 4px 12px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  box-shadow: 0 12px 36px -4px rgba(14, 165, 233, 0.2);
   color: #0F172A;
 }
 
-.hero-title {
-  position: relative;
-  font-size: clamp(3.4rem, 7.5vw, 5.8rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.04;
-  margin-bottom: 24px;
-  color: var(--text-main);
+/* Editorial Serif Cinzel Hero Title */
+.cinzel-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: clamp(3.6rem, 8vw, 6.4rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 0.98;
+  margin-bottom: 20px;
+  color: #f8fafc;
   z-index: 1;
+  text-shadow:
+    0 0 45px rgba(6, 182, 212, 0.45),
+    0 0 90px rgba(147, 51, 234, 0.25),
+    0 2px 20px rgba(0, 0, 0, 0.95);
+}
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 0.98;
+  margin-bottom: 20px;
+  color: #f8fafc;
+  z-index: 1;
+  text-shadow:
+    0 0 45px rgba(6, 182, 212, 0.45),
+    0 0 90px rgba(147, 51, 234, 0.25),
+    0 2px 20px rgba(0, 0, 0, 0.95);
 }
 
-/* Luminous Ambient Glow Directly Centered Behind Main Name */
+.hero-subtitle-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(103, 232, 249, 0.95);
+  margin-bottom: 20px;
+}
+
+.hero-subtitle-tag .accent-cross {
+  color: rgba(6, 182, 212, 0.5);
+  margin: 0 4px;
+}
+
+/* Hero Bio Text */
+.hero-bio-text {
+  font-size: 1.12rem;
+  color: var(--text-dim);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Hero Actions Wrap */
+.hero-actions-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn-github-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.7);
+  color: #F8FAFC;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: var(--spring-transition);
+}
+
+.btn-github-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  border-color: rgba(6, 182, 212, 0.6);
+  color: #67e8f9;
+  box-shadow: 0 12px 35px rgba(6, 182, 212, 0.25);
+}
+
+/* Interactive Hint */
+.interactive-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.55);
+}
+
+.interactive-hint .hint-line {
+  width: 24px;
+  height: 1px;
+  background: rgba(148, 163, 184, 0.3);
+}
+
+/* Luminous Atmospheric Zero-G Glow Behind Main Name */
 #hero-name::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
-  height: 240px;
+  width: 520px;
+  height: 260px;
   max-width: 95vw;
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.22) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 75%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, rgba(6, 182, 212, 0.20) 45%, rgba(15, 118, 110, 0.15) 75%, transparent 85%);
+  filter: blur(55px);
   z-index: -1;
   pointer-events: none;
   border-radius: 50%;
@@ -652,18 +840,50 @@ body.light-theme .hero-bio-text {
 
 body.light-theme .btn-view-cv,
 body.light .btn-view-cv {
-  background: #0f172a;
-  color: #ffffff;
-  border: 1px solid #0f172a;
-  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.25);
+  background: #090d16 !important;
+  color: #ffffff !important;
+  border: 1px solid #090d16 !important;
+  box-shadow: 0 4px 14px rgba(9, 13, 22, 0.15) !important;
 }
 
 body.light-theme .btn-view-cv:hover,
 body.light .btn-view-cv:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px -4px rgba(15, 23, 42, 0.35);
-  background: #1e293b;
-  border-color: #1e293b;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(9, 13, 22, 0.22) !important;
+  background: #1e293b !important;
+  border-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+body.light-theme .btn-github-pill,
+body.light .btn-github-pill {
+  background: rgba(15, 23, 42, 0.05) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.light-theme .btn-github-pill:hover,
+body.light .btn-github-pill:hover {
+  background: rgba(15, 23, 42, 0.1) !important;
+  color: #090d16 !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08) !important;
+}
+
+body.light-theme .hero-subtitle-tag,
+body.light .hero-subtitle-tag {
+  color: #2563eb !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+}
+
+body.light-theme .hero-bio-text,
+body.light .hero-bio-text {
+  color: #334155 !important;
+  line-height: 1.65 !important;
+  font-weight: 500 !important;
 }
 
 .btn-view-cv svg {
@@ -732,7 +952,25 @@ html.light .about-logo-card,
   box-shadow: 0 12px 36px -4px rgba(99, 102, 241, 0.16), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
 }
 
-/* Monogram Orbital Ring System */
+/* Monogram Orbital Ring System - Interactive Dynamics & Theme Adaptation */
+.about-badge-card {
+  cursor: pointer;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-badge-card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 20px 50px rgba(6, 182, 212, 0.25), var(--dock-glass-shadow);
+}
+
+body.light-theme .about-badge-card:hover,
+body.light .about-badge-card:hover {
+  border-color: rgba(29, 78, 216, 0.3) !important;
+  box-shadow: 0 20px 45px rgba(29, 78, 216, 0.15), 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+}
+
 .monogram-orbital-container {
   position: relative;
   width: 170px;
@@ -752,10 +990,18 @@ html.light .about-logo-card,
   border: 2px dashed rgba(6, 182, 212, 0.55);
   box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
   animation: spinClockwise 22s linear infinite;
+  transition: animation-duration 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.4s ease;
   pointer-events: none;
 }
 
-/* Inner Spinning Dashed Ring (Amber Accent Glow) */
+.about-badge-card:hover .orbital-ring-outer {
+  animation-duration: 6s;
+  border-color: #06b6d4;
+  box-shadow: 0 0 35px rgba(6, 182, 212, 0.6);
+  transform: scale(1.05);
+}
+
+/* Inner Spinning Dashed Ring (Amber/Violet Accent Glow) */
 .orbital-ring-inner {
   position: absolute;
   inset: 18px;
@@ -763,7 +1009,39 @@ html.light .about-logo-card,
   border: 2px dashed rgba(245, 158, 11, 0.55);
   box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
   animation: spinCounter 15s linear infinite;
+  transition: animation-duration 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.4s ease;
   pointer-events: none;
+}
+
+.about-badge-card:hover .orbital-ring-inner {
+  animation-duration: 4s;
+  border-color: #a855f7;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+  transform: scale(1.04);
+}
+
+/* Light Theme Orbital Ring Overrides */
+body.light-theme .orbital-ring-outer,
+body.light .orbital-ring-outer {
+  border-color: rgba(29, 78, 216, 0.5) !important;
+  box-shadow: 0 0 18px rgba(29, 78, 216, 0.15) !important;
+}
+
+body.light-theme .about-badge-card:hover .orbital-ring-outer,
+body.light .about-badge-card:hover .orbital-ring-outer {
+  border-color: #1d4ed8 !important;
+  box-shadow: 0 0 30px rgba(29, 78, 216, 0.4) !important;
+}
+
+body.light-theme .orbital-ring-inner,
+body.light .orbital-ring-inner {
+  border-color: rgba(99, 102, 241, 0.5) !important;
+}
+
+body.light-theme .about-badge-card:hover .orbital-ring-inner,
+body.light .about-badge-card:hover .orbital-ring-inner {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.35) !important;
 }
 
 /* Center Monogram Badge "TA" */
@@ -780,6 +1058,13 @@ html.light .about-logo-card,
   justify-content: center;
   border: 1.5px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-badge-card:hover .monogram-medallion {
+  transform: scale(1.08);
+  border-color: #06b6d4;
+  box-shadow: 0 12px 35px rgba(6, 182, 212, 0.45);
 }
 
 .logo-inner-badge span,
@@ -788,6 +1073,11 @@ html.light .about-logo-card,
   font-size: 2.2rem;
   font-weight: 900;
   line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.about-badge-card:hover .monogram-medallion span {
+  transform: scale(1.1);
 }
 
 body.light-theme .logo-inner-badge,
@@ -799,8 +1089,14 @@ html.light .monogram-medallion,
 [data-theme="light"] .logo-inner-badge,
 [data-theme="light"] .monogram-medallion {
   background: #ffffff !important;
-  border: 2px solid rgba(99, 102, 241, 0.3) !important;
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25) !important;
+  border: 2px solid rgba(29, 78, 216, 0.25) !important;
+  box-shadow: 0 10px 30px rgba(29, 78, 216, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+body.light-theme .about-badge-card:hover .monogram-medallion,
+body.light .about-badge-card:hover .monogram-medallion {
+  border-color: #1d4ed8 !important;
+  box-shadow: 0 12px 35px rgba(29, 78, 216, 0.3) !important;
 }
 
 body.light-theme .logo-inner-badge span,
@@ -811,7 +1107,7 @@ html.light .logo-inner-badge span,
 html.light .monogram-medallion span,
 [data-theme="light"] .logo-inner-badge span,
 [data-theme="light"] .monogram-medallion span {
-  color: #0f172a !important;
+  color: #090d16 !important;
   text-shadow: none !important;
 }
 
@@ -1520,10 +1816,10 @@ body.light .scroll-top-btn:hover {
 }
 
 /* ==========================================================================
-   ENFORCED HIGH-SPECIFICITY LIGHT MODE THEME OVERRIDES
+   ENFORCED HIGH-SPECIFICITY LIGHT MODE THEME OVERRIDES (TITANIUM CERAMIC)
    ========================================================================== */
 
-/* 1. Base Canvas */
+/* 1. Base Canvas - Titanium / Ceramic White Base */
 html.light,
 body.light,
 [data-theme="light"],
@@ -1534,14 +1830,15 @@ html.light .bg-gradient-canvas,
 body.light .bg-gradient-canvas,
 [data-theme="light"] .bg-gradient-canvas,
 body.light-theme .bg-gradient-canvas {
-  background: radial-gradient(circle at 18% 78%, rgba(14, 165, 233, 0.35) 0%, transparent 48%),
-              radial-gradient(circle at 45% 20%, rgba(99, 102, 241, 0.32) 0%, transparent 52%),
-              radial-gradient(circle at 85% 35%, rgba(244, 63, 94, 0.26) 0%, transparent 46%),
-              linear-gradient(145deg, #f0f4ff 0%, #fae8ff 45%, #fff1f2 100%) !important;
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 65%, rgba(99, 102, 241, 0.06) 0%, transparent 45%) !important;
   background-attachment: fixed !important;
+  color: #0f172a !important;
 }
 
-/* 2. Texture */
+/* 2. Razor-Thin Subtle Texture Grid */
 html.light .ribbed-overlay,
 body.light .ribbed-overlay,
 [data-theme="light"] .ribbed-overlay,
@@ -1550,16 +1847,30 @@ html.light .bg-gradient-canvas,
 body.light .bg-gradient-canvas,
 [data-theme="light"] .bg-gradient-canvas,
 body.light-theme .bg-gradient-canvas {
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(71, 85, 105, 0.1) 0px,
-    rgba(71, 85, 105, 0.1) 1.5px,
-    transparent 1.5px,
-    transparent 18px
-  ) !important;
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
+  background-size: 80px 100% !important;
 }
 
-/* 3. Hero Name & Glowing Letters (Clean Solid Typography, No Gradient Text-Clipping) */
+/* 3. Hide Dark Hero Overlays in Light Mode */
+html.light .vignette-overlay,
+body.light .vignette-overlay,
+[data-theme="light"] .vignette-overlay,
+body.light-theme .vignette-overlay,
+html.light .cosmic-void,
+body.light .cosmic-void,
+[data-theme="light"] .cosmic-void,
+body.light-theme .cosmic-void,
+html.light .flux-core-beam,
+body.light .flux-core-beam,
+[data-theme="light"] .flux-core-beam,
+body.light-theme .flux-core-beam {
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* 4. Hero Title & Typography */
 html.light #hero-name,
 body.light #hero-name,
 [data-theme="light"] #hero-name,
@@ -1577,30 +1888,23 @@ body.light .hero-name-line,
 [data-theme="light"] .hero-name-line,
 body.light-theme .hero-name-line {
   background: none !important;
-  color: #0f172a !important;
-  -webkit-text-fill-color: #0f172a !important;
+  color: #090d16 !important;
+  -webkit-text-fill-color: #090d16 !important;
   filter: none !important;
+  text-shadow: none !important;
 }
 
-html.light .glow-char:not(:hover):not(.active-glow),
-body.light .glow-char:not(:hover):not(.active-glow),
-[data-theme="light"] .glow-char:not(:hover):not(.active-glow),
-body.light-theme .glow-char:not(:hover):not(.active-glow),
-html.light .glow-letter:not(:hover):not(.active-glow),
-body.light .glow-letter:not(:hover):not(.active-glow),
-[data-theme="light"] .glow-letter:not(:hover):not(.active-glow),
-body.light-theme .glow-letter:not(:hover):not(.active-glow),
-html.light #hero-name .glow-char:not(:hover):not(.active-glow),
-body.light #hero-name .glow-char:not(:hover):not(.active-glow),
-[data-theme="light"] #hero-name .glow-char:not(:hover):not(.active-glow),
-body.light-theme #hero-name .glow-char:not(:hover):not(.active-glow),
-html.light #hero-name .glow-letter:not(:hover):not(.active-glow),
-body.light #hero-name .glow-letter:not(:hover):not(.active-glow),
-[data-theme="light"] #hero-name .glow-letter:not(:hover):not(.active-glow),
-body.light-theme #hero-name .glow-letter:not(:hover):not(.active-glow) {
+html.light .glow-char,
+body.light .glow-char,
+[data-theme="light"] .glow-char,
+body.light-theme .glow-char,
+html.light .glow-letter,
+body.light .glow-letter,
+[data-theme="light"] .glow-letter,
+body.light-theme .glow-letter {
   background: none !important;
-  color: #0f172a !important;
-  -webkit-text-fill-color: #0f172a !important;
+  color: #090d16 !important;
+  -webkit-text-fill-color: #090d16 !important;
   filter: none !important;
   text-shadow: none !important;
 }
@@ -1612,164 +1916,111 @@ body.light #hero-name::after,
 [data-theme="light"] #hero-name::before,
 [data-theme="light"] #hero-name::after,
 body.light-theme #hero-name::before,
-body.light-theme #hero-name::after,
-html.light .hero-title::before,
-html.light .hero-title::after,
-body.light .hero-title::before,
-body.light .hero-title::after,
-[data-theme="light"] .hero-title::before,
-[data-theme="light"] .hero-title::after,
-body.light-theme .hero-title::before,
-body.light-theme .hero-title::after,
-html.light .name-row::before,
-html.light .name-row::after,
-body.light .name-row::before,
-body.light .name-row::after,
-[data-theme="light"] .name-row::before,
-[data-theme="light"] .name-row::after,
-body.light-theme .name-row::before,
-body.light-theme .name-row::after,
-html.light .hero-name-line::before,
-html.light .hero-name-line::after,
-body.light .hero-name-line::before,
-body.light .hero-name-line::after,
-[data-theme="light"] .hero-name-line::before,
-[data-theme="light"] .hero-name-line::after,
-body.light-theme .hero-name-line::before,
-body.light-theme .hero-name-line::after,
-html.light .glow-char::before,
-html.light .glow-char::after,
-body.light .glow-char::before,
-body.light .glow-char::after,
-[data-theme="light"] .glow-char::before,
-[data-theme="light"] .glow-char::after,
-body.light-theme .glow-char::before,
-body.light-theme .glow-char::after,
-html.light .glow-letter::before,
-html.light .glow-letter::after,
-body.light .glow-letter::before,
-body.light .glow-letter::after,
-[data-theme="light"] .glow-letter::before,
-[data-theme="light"] .glow-letter::after,
-body.light-theme .glow-letter::before,
-body.light-theme .glow-letter::after {
+body.light-theme #hero-name::after {
   display: none !important;
   content: none !important;
-  filter: none !important;
-  opacity: 0 !important;
 }
 
-html.light #hero-name .glow-char:hover,
-body.light #hero-name .glow-char:hover,
-[data-theme="light"] #hero-name .glow-char:hover,
-body.light-theme #hero-name .glow-char:hover,
-html.light #hero-name .glow-char.active-glow,
-body.light #hero-name .glow-char.active-glow,
-[data-theme="light"] #hero-name .glow-char.active-glow,
-body.light-theme #hero-name .glow-char.active-glow,
-html.light #hero-name .glow-letter:hover,
-body.light #hero-name .glow-letter:hover,
-[data-theme="light"] #hero-name .glow-letter:hover,
-body.light-theme #hero-name .glow-letter:hover,
-html.light #hero-name .glow-letter.active-glow,
-body.light #hero-name .glow-letter.active-glow,
-[data-theme="light"] #hero-name .glow-letter.active-glow,
-body.light-theme #hero-name .glow-letter.active-glow,
-html.light .glow-char:hover,
-body.light .glow-char:hover,
-[data-theme="light"] .glow-char:hover,
-body.light-theme .glow-char:hover,
-html.light .glow-char.active-glow,
-body.light .glow-char.active-glow,
-[data-theme="light"] .glow-char.active-glow,
-body.light-theme .glow-char.active-glow,
-html.light .glow-letter:hover,
-body.light .glow-letter:hover,
-[data-theme="light"] .glow-letter:hover,
-body.light-theme .glow-letter:hover,
-html.light .glow-letter.active-glow,
-body.light .glow-letter.active-glow,
-[data-theme="light"] .glow-letter.active-glow,
-body.light-theme .glow-letter.active-glow {
-  color: #7c3aed !important;
-  -webkit-text-fill-color: #7c3aed !important;
-  background: none !important;
-  transform: translateY(-5px) scale(1.15) !important;
-  text-shadow: 0 0 12px rgba(124, 58, 237, 0.75), 0 0 24px rgba(147, 51, 234, 0.5), 0 0 36px rgba(217, 70, 239, 0.35) !important;
+/* Subtitle Discipline & Bio Text */
+html.light .hero-subtitle-tag,
+body.light .hero-subtitle-tag,
+[data-theme="light"] .hero-subtitle-tag,
+body.light-theme .hero-subtitle-tag {
+  color: #2563eb !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
 }
 
-/* 4. Light Theme Badge Override */
-html.light .logo-inner-badge,
-body.light .logo-inner-badge,
-[data-theme="light"] .logo-inner-badge,
-body.light-theme .logo-inner-badge,
-html.light .monogram-medallion,
-body.light .monogram-medallion,
-[data-theme="light"] .monogram-medallion,
-body.light-theme .monogram-medallion {
-  background: #ffffff !important;
-  border: 2px solid rgba(99, 102, 241, 0.3) !important;
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25) !important;
+html.light .hero-bio-text,
+body.light .hero-bio-text,
+[data-theme="light"] .hero-bio-text,
+body.light-theme .hero-bio-text {
+  color: #334155 !important;
+  line-height: 1.65 !important;
+  font-weight: 500 !important;
 }
 
-html.light .logo-inner-badge span,
-body.light .logo-inner-badge span,
-[data-theme="light"] .logo-inner-badge span,
-body.light-theme .logo-inner-badge span,
-html.light .monogram-medallion span,
-body.light .monogram-medallion span,
-[data-theme="light"] .monogram-medallion span,
-body.light-theme .monogram-medallion span {
-  color: #0f172a !important;
-  text-shadow: none !important;
-}
-
-/* 5. Floating Pill Navbar & Theme Toggle */
+/* 5. Floating Pill Navbar & Brand Pill */
 html.light .navbar-dock,
 body.light .navbar-dock,
 [data-theme="light"] .navbar-dock,
-body.light-theme .navbar-dock,
-html.light .theme-pill-btn,
-body.light .theme-pill-btn,
-[data-theme="light"] .theme-pill-btn,
-body.light-theme .theme-pill-btn {
-  background: rgba(255, 255, 255, 0.8) !important;
+body.light-theme .navbar-dock {
+  background: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.18) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* 6. Active Nav Capsule */
+html.light .brand-pill,
+body.light .brand-pill,
+[data-theme="light"] .brand-pill,
+body.light-theme .brand-pill {
+  color: #0f172a !important;
+}
+
+html.light .nav-links-dock,
+body.light .nav-links-dock,
+[data-theme="light"] .nav-links-dock,
+body.light-theme .nav-links-dock {
+  background: rgba(15, 23, 42, 0.05) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light .nav-item-link,
+body.light .nav-item-link,
+[data-theme="light"] .nav-item-link,
+body.light-theme .nav-item-link {
+  color: #334155 !important;
+}
+
 html.light .nav-item-link.active,
 body.light .nav-item-link.active,
 [data-theme="light"] .nav-item-link.active,
 body.light-theme .nav-item-link.active {
-  background: #0f172a !important;
+  background: #090d16 !important;
   color: #ffffff !important;
 }
 
-/* 7. Call To Action Buttons */
+/* 6. Buttons */
 html.light .btn-view-cv,
 body.light .btn-view-cv,
 [data-theme="light"] .btn-view-cv,
-body.light-theme .btn-view-cv,
-html.light .btn-translucent-pill,
-body.light .btn-translucent-pill,
-[data-theme="light"] .btn-translucent-pill,
-body.light-theme .btn-translucent-pill {
-  background: #0f172a !important;
+body.light-theme .btn-view-cv {
+  background: #090d16 !important;
   color: #ffffff !important;
+  border: 1px solid #090d16 !important;
+  box-shadow: 0 4px 14px rgba(9, 13, 22, 0.15) !important;
 }
 
 html.light .btn-view-cv:hover,
 body.light .btn-view-cv:hover,
 [data-theme="light"] .btn-view-cv:hover,
-body.light-theme .btn-view-cv:hover,
-html.light .btn-translucent-pill:hover,
-body.light .btn-translucent-pill:hover,
-[data-theme="light"] .btn-translucent-pill:hover,
-body.light-theme .btn-translucent-pill:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 14px 30px -4px rgba(15, 23, 42, 0.35) !important;
+body.light-theme .btn-view-cv:hover {
+  background: #1e293b !important;
+  border-color: #1e293b !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(9, 13, 22, 0.22) !important;
+}
+
+html.light .btn-github-pill,
+body.light .btn-github-pill,
+[data-theme="light"] .btn-github-pill,
+body.light-theme .btn-github-pill {
+  background: rgba(15, 23, 42, 0.05) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light .btn-github-pill:hover,
+body.light .btn-github-pill:hover,
+[data-theme="light"] .btn-github-pill:hover,
+body.light-theme .btn-github-pill:hover {
+  background: rgba(15, 23, 42, 0.1) !important;
+  color: #090d16 !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08) !important;
 }
